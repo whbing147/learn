@@ -10,7 +10,7 @@ public interface MainMapper {
 
     int insertSelective(Main record);
 
-    Main selectByPrimaryKey(Integer id);
+    Main selectByName(String name);
 
     int updateStatusByName(MainBo main);
 

@@ -1,5 +1,6 @@
 package com.wanghanbing.learn.mapper;
 
+import com.wanghanbing.learn.dao.bo.MainBo;
 import com.wanghanbing.learn.po.Detail;
 
 public interface DetailMapper {
@@ -9,9 +10,9 @@ public interface DetailMapper {
 
     int insertSelective(Detail record);
 
-    Detail selectByPrimaryKey(Integer id);
+    Detail selectByName(String name);
 
-    int updateByPrimaryKeySelective(Detail record);
+    int updateStatusByName(MainBo mainBo);
 
     int updateByPrimaryKey(Detail record);
 }

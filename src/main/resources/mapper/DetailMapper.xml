@@ -9,11 +9,11 @@
   <sql id="Base_Column_List">
     id, status, name
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from detail
-    where id = #{id,jdbcType=INTEGER}
+    where name = #{name,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from detail
@@ -50,17 +50,14 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.wanghanbing.learn.po.Detail">
+  <update id="updateStatusByName" parameterType="com.wanghanbing.learn.dao.bo.MainBo">
     update detail
     <set>
-      <if test="status != null">
-        status = #{status,jdbcType=CHAR},
-      </if>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
+      <if test="newStatus != null">
+        status = #{newStatus,jdbcType=CHAR},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where name = #{name,jdbcType=VARCHAR} and status = #{oldStatus,jdbcType=CHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wanghanbing.learn.po.Detail">
     update detail
