@@ -45,4 +45,5 @@ public class TableDaoImpl implements ITableDao {
     public Detail selectDetailByName(String name) {
         return detailMapper.selectByName(name);
     }
+
 }

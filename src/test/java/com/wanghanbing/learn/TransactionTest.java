@@ -51,11 +51,13 @@ public class TransactionTest {
 
     }
 
-
+    @Test
     public void multiUpdate() throws InterruptedException, ExecutionException {
         String name = "wanghanbing";
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
         int runCount = 1;
-        for (;;) {
+        int loopCount = 10;
+        for (int c = 0; c < loopCount; c++) {
             System.out.println("-------------运行到" + runCount++ + "次---------");
             String oldStatus = "01";
             String newStatus = "02";
@@ -79,7 +81,7 @@ public class TransactionTest {
 
             int threadCount = new Random().nextInt(8) + 2;
             int fail = 0;
-            ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
+
             List<Future<Integer>> featureList = new ArrayList<>();
             for (int i = 1; i <= threadCount; i++) {
                 Thread.sleep(1000L);
