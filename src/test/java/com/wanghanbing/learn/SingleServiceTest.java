@@ -56,7 +56,7 @@ public class SingleServiceTest extends SpringBaseServiceTest {
                 public void run() {
                     System.out.println("进入线程：" + x);
                     try {
-                        Thread.sleep((millSecond - x) * 1000L);
+
                         singleService.method(x);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
