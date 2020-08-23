@@ -19,20 +19,19 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:spring-*.xml" })
+
 public class TransactionTest {
 
     @Autowired
     private ITableDao tableDao;
 
-    @Test
+
     public void query() {
         Main main = tableDao.selectMainByName("wanghanbing");
         System.out.println(main);
     }
 
-    @Test
+
     public void update() throws InterruptedException {
         String name = "wanghanbing";
         try {
@@ -51,12 +50,12 @@ public class TransactionTest {
 
     }
 
-    @Test
+
     public void multiUpdate() throws InterruptedException, ExecutionException {
         String name = "wanghanbing";
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         int runCount = 1;
-        int loopCount = 10;
+        int loopCount = 1;
         for (int c = 0; c < loopCount; c++) {
             System.out.println("-------------运行到" + runCount++ + "次---------");
             String oldStatus = "01";

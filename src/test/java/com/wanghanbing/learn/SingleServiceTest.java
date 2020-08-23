@@ -8,12 +8,17 @@ import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class SingleServiceTest extends SpringBaseServiceTest {
+public class SingleServiceTest {
 
     @Resource
     private SingleService singleService;
 
-    @Test
+
+
+    public void test() {
+        System.out.println("--------SingleServiceTest-----");
+    }
+
     public void multiMethodRun() throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         int threadCount = 10;
@@ -40,10 +45,10 @@ public class SingleServiceTest extends SpringBaseServiceTest {
             });
         }
 
-        Thread.sleep(100000L);
+        Thread.sleep(10000L);
     }
 
-    @Test
+
     public void multiMethodRun1() throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         int threadCount = 10;
@@ -65,6 +70,6 @@ public class SingleServiceTest extends SpringBaseServiceTest {
             });
         }
 
-        Thread.sleep(100000L);
+        Thread.sleep(10000L);
     }
 }

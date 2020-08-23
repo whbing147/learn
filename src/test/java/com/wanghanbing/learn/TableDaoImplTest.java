@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TableDaoImplTest {
 
-    @Test
+
     public void update() {
         System.out.println("start-------------------------");
         //初始化容器

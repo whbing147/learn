@@ -15,7 +15,7 @@ import java.util.concurrent.Executors;
 
 public class ConcurrentHashMapTest {
 
-    @Test
+
     public void test() throws InterruptedException {
         ConcurrentHashMap<Integer, Integer> hashMap = new ConcurrentHashMap<>();
         ExecutorService executorService = Executors.newFixedThreadPool(10);
