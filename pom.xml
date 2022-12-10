@@ -26,7 +26,7 @@
     <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
     <jetty.port>8089</jetty.port>
-    <spring.version>4.3.1.RELEASE</spring.version>
+    <spring.version>6.0.0</spring.version>
     <!-- mybatis版本号 -->
     <mybatis.version>3.4.5</mybatis.version>
     <slf4j.version>1.7.25</slf4j.version>
